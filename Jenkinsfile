@@ -1,10 +1,13 @@
 //declarative script
 pipeline{
-	agent { docker { image 'maven:3.6.3-openjdk-16' } }
+	// agent { docker { image 'maven:3.6.3-openjdk-16' } }
 	stages{
 		stage("build"){
 			steps{
-				 sh 'mvn --version'
+				//  sh 'mvn --version'
+				echo "$PATH"
+				echo "BUILD_TAG - $env.BUILD_TAG"
+				echo "BUILD_NUMBER - $env.BUILD_NUMBER"
 				echo "build"
 			}
      	}
