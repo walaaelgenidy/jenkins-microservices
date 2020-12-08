@@ -1,6 +1,6 @@
 //declarative script
 pipeline{
-	// agent { docker { image 'maven:3.6.3-openjdk-16' } }
+	 agent any
 	stages{
 		stage("build"){
 			steps{
