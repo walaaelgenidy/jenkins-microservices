@@ -1,10 +1,10 @@
 //declarative script
 pipeline{
-	agent {openjdk:8-jdk-alpine}
+	agent { docker { image 'node:14-alpine' }}
 	stages{
 		stage("build"){
 			steps{
-				// sh 'maven --version'
+				 sh 'npm --version'
 				echo "build"
 			}
      	}
