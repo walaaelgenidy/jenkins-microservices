@@ -1,6 +1,6 @@
 //declarative script
 pipeline{
-	agent any
+	agent {openjdk:8-jdk-alpine}
 	stages{
 		stage("build"){
 			steps{
