@@ -1,10 +1,16 @@
 //declarative script
 pipeline{
 	 agent any
+	 environment {
+		 dockerHome = tool 'myDocker'
+		 mavenHome = tool 'myMaven'
+		 PATH = "$dockerHome/bin:$mavenHome/bin:$PATH"
+	 }
 	stages{
 		stage("build"){
 			steps{
-				//  sh 'mvn --version'
+				 sh 'mvn --version'
+				 sh 'docker version'
 				echo "$PATH"
 				echo "BUILD_TAG - $env.BUILD_TAG"
 				echo "BUILD_NUMBER - $env.BUILD_NUMBER"
